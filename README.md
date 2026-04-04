@@ -1,8 +1,8 @@
-# 🏥 Centre Medical Danan — Patient Portal
+# Centre Medical Danan — Patient Portal
 
 A full-stack, production-ready Patient Portal for an ophthalmology clinic built with **React + TailwindCSS** (frontend) and **Node.js + Express + Prisma + PostgreSQL** (backend).
 
-## ✨ Features
+## Features
 
 - **Authentication** — Login, Signup, JWT token refresh, protected routes
 - **Dashboard** — Overview of appointments, results, and prescriptions
@@ -17,7 +17,7 @@ A full-stack, production-ready Patient Portal for an ophthalmology clinic built 
 - **Notifications** — Real-time notification bell with unread indicators
 - **404 Page** — Custom error page with navigation
 
-## 🎨 Design
+## Design
 
 - Color palette: `#2FA4D7`, `#111FA2`, `#EBF4F6`, `#3F9AAE`
 - Typography: DM Sans + Plus Jakarta Sans
@@ -87,7 +87,7 @@ patient-portal/
 └── README.md
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -150,7 +150,7 @@ Email:    test@demo.com
 Password: Test1234
 ```
 
-## 📡 API Routes
+## API Routes
 
 | Method | Route                              | Description                  |
 |--------|-------------------------------------|------------------------------|
@@ -186,7 +186,7 @@ Password: Test1234
 
 **Models:** `User`, `Appointment`, `Prescription`, `PrescriptionRenewal`, `TestResult`, `MedicalRecord`, `Notification`, `Doctor`
 
-## 📝 Seed Data
+## Seed Data
 
 The seed creates:
 - 1 demo user (test@demo.com / Test1234) with full profile
@@ -199,4 +199,4 @@ The seed creates:
 
 ---
 
-Built with care for **Centre Medical Danan** 🏥
+Built with love by Moran for **Centre Medical Danan** 
