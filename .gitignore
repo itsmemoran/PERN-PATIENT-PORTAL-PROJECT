@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Environment variables (NEVER push these)
+.env
+.env.local
+
+# Build outputs
+frontend/dist/
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

@@ -1,0 +1,163 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String   @id @default(uuid())
+  email           String   @unique
+  password        String?
+  googleId        String?  @unique @map("google_id")
+  firstName       String   @map("first_name")
+  lastName        String   @map("last_name")
+  phone           String?
+  dateOfBirth     DateTime? @map("date_of_birth")
+  avatarUrl       String?   @map("avatar_url")
+  bloodType       String?   @map("blood_type")
+  heightCm        Float?    @map("height_cm")
+  weightKg        Float?    @map("weight_kg")
+  allergies       String?   @default("[]")
+  chronicConditions String? @default("[]") @map("chronic_conditions")
+  emergencyContact  String? @map("emergency_contact")
+  emergencyPhone    String? @map("emergency_phone")
+  address         String?
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  appointments    Appointment[]
+  prescriptions   Prescription[]
+  testResults     TestResult[]
+  medicalRecords  MedicalRecord[]
+  notifications   Notification[]
+
+  @@map("users")
+}
+
+model Appointment {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  doctor    String
+  specialty String?
+  type      String   @default("Consultation")
+  date      DateTime
+  time      String
+  location  String?
+  status    String   @default("pending")
+  notes     String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("appointments")
+}
+
+model Prescription {
+  id               String   @id @default(uuid())
+  userId           String   @map("user_id")
+  medication       String
+  medicationType   String?  @map("medication_type")
+  dosage           String
+  frequency        String?
+  duration         String?
+  instructions     String?
+  sideEffects      String?  @map("side_effects")
+  prescribedBy     String?  @map("prescribed_by")
+  prescribedDate   DateTime? @map("prescribed_date")
+  expiryDate       DateTime? @map("expiry_date")
+  status           String   @default("active")
+  refillsRemaining Int?     @map("refills_remaining")
+  totalRefills     Int?     @map("total_refills")
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  renewals PrescriptionRenewal[]
+  user     User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("prescriptions")
+}
+
+model PrescriptionRenewal {
+  id               String   @id @default(uuid())
+  prescriptionId   String   @map("prescription_id")
+  medication       String
+  status           String   @default("pending")
+  requestDate      DateTime @default(now()) @map("request_date")
+  estimatedApproval DateTime? @map("estimated_approval")
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  prescription Prescription @relation(fields: [prescriptionId], references: [id], onDelete: Cascade)
+
+  @@map("prescription_renewals")
+}
+
+model TestResult {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  testName  String   @map("test_name")
+  doctor    String
+  date      DateTime
+  status    String   @default("normal")
+  trend     String?
+  results   String?  @default("{}")
+  notes     String?
+  filePath  String?  @map("file_path")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("test_results")
+}
+
+model MedicalRecord {
+  id         String   @id @default(uuid())
+  userId     String   @map("user_id")
+  recordType String   @map("record_type")
+  doctor     String?
+  date       DateTime
+  diagnosis  String?
+  treatment  String?
+  notes      String?
+  filePath   String?  @map("file_path")
+  fileName   String?  @map("file_name")
+  fileType   String?  @map("file_type")
+  fileSize   String?  @map("file_size")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("medical_records")
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  title     String
+  message   String
+  type      String   @default("info")
+  read      Boolean  @default(false)
+  link      String?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("notifications")
+}
+
+model Doctor {
+  id              String @id @default(uuid())
+  name            String
+  specialty       String
+  phone           String?
+  email           String?
+  consultationDays String? @map("consultation_days")
+  availableSlots  String? @default("[]") @map("available_slots")
+
+  @@map("doctors")
+}

@@ -1,0 +1,73 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,jsx}'],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#2FA4D7',
+          50: '#E8F6FC',
+          100: '#D1EDF9',
+          200: '#A3DBF3',
+          300: '#75C9ED',
+          400: '#47B7E7',
+          500: '#2FA4D7',
+          600: '#2483AC',
+          700: '#1A6281',
+          800: '#104256',
+          900: '#06212B',
+        },
+        secondary: {
+          DEFAULT: '#111FA2',
+          50: '#ECEDF7',
+          100: '#D9DBEF',
+          200: '#B3B7DF',
+          300: '#8D93CF',
+          400: '#676FBF',
+          500: '#111FA2',
+          600: '#0E1982',
+          700: '#0A1361',
+          800: '#070C41',
+          900: '#030620',
+        },
+        accent: {
+          DEFAULT: '#3F9AAE',
+          50: '#EBF7F9',
+          100: '#D7EFF3',
+          200: '#AFDFE7',
+          300: '#87CFDB',
+          400: '#5FBFCF',
+          500: '#3F9AAE',
+          600: '#327B8B',
+          700: '#265C68',
+          800: '#193D46',
+          900: '#0D1F23',
+        },
+        surface: {
+          DEFAULT: '#EBF4F6',
+          50: '#FFFFFF',
+          100: '#F5FAFB',
+          200: '#EBF4F6',
+          300: '#D7E9ED',
+          400: '#C3DEE4',
+          500: '#AFD3DB',
+        },
+      },
+      fontFamily: {
+        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        xl: '1rem',
+        '2xl': '1.25rem',
+        '3xl': '1.5rem',
+      },
+      boxShadow: {
+        card: '0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06)',
+        elevated: '0 4px 24px rgba(47,164,215,0.12)',
+        glow: '0 0 20px rgba(47,164,215,0.2)',
+      },
+    },
+  },
+  plugins: [],
+}
