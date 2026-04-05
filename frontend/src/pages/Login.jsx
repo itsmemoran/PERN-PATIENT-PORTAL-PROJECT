@@ -60,9 +60,9 @@ export default function Login() {
         <div className="w-full max-w-md">
           {/* Mobile logo */}
           <div className="lg:hidden flex items-center gap-2 mb-8">
-            <img className= 'w-10 h-10 flex items-center justify-center' src="/src/assets/logo-danan-500x500.png" alt="logo" />
+            <img className= 'w-22 h-12 flex items-center justify-center' src="/src/assets/logo-danan-500x500.png" alt="logo" />
             <div>
-              <p className="font-bold font-display text-gray-900">Centre Medical Danan</p>
+              <p className="font-semibold font-display text-gray-500">Centre Medical Danan</p>
             </div>
           </div>
 
