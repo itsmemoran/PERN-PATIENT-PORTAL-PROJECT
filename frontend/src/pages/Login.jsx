@@ -36,7 +36,7 @@ export default function Login() {
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
         </div>
         <div className="relative z-10 px-12 text-white max-w-md">
-          <img className= 'w-25 h-20 rounded- bg- backdrop-blur-sm flex items-center justify-center mb-8' src="/src/assets/logodananwhite.png" alt="logo" />
+          <img className= 'w-25 h-20 rounded- bg- backdrop-blur-sm flex items-center justify-center mb-8' src="/assets/logodananwhite.png" alt="logo" />
           {/* <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-8">
             <span className="text-3xl font-bold font-display">D</span>
           </div> */}
@@ -60,7 +60,7 @@ export default function Login() {
         <div className="w-full max-w-md">
           {/* Mobile logo */}
           <div className="lg:hidden flex items-center gap-2 mb-8">
-            <img className= 'w-22 h-12 flex items-center justify-center' src="/src/assets/logo-danan-500x500.png" alt="logo" />
+            <img className= 'w-22 h-12 flex items-center justify-center' src="/assets/logo-danan-500x500.png" alt="logo" />
             <div>
               <p className="font-semibold font-display text-gray-500">Centre Medical Danan</p>
             </div>

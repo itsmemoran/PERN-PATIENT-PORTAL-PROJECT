@@ -47,7 +47,7 @@ export default function Sidebar({ open, onClose }) {
         {/* Logo */}
         <div className="flex items-center justify-between px-5 py-5 border-b border-gray-50">
           <div className="flex items-center gap-2.5">
-            <img className='className="w-10 h-10  flex items-center justify-center' src="/src/assets/logo-danan-500x500.png" alt="logo" />
+            <img className='className="w-10 h-10  flex items-center justify-center' src="/assets/logo-danan-500x500.png" alt="logo" />
             <div>
               <p className="text-sm font-bold font-display text-gray-900 leading-tight">Centre Medical</p>
               <p className="text-[11px] text-primary-600 font-medium">Danan</p>
