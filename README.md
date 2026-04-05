@@ -25,7 +25,7 @@ A full-stack, production-ready Patient Portal for an ophthalmology clinic built 
 - Responsive — works on mobile, tablet, and desktop
 - Smooth page transitions and micro-interactions
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Layer    | Technology                                    |
 |----------|-----------------------------------------------|
@@ -34,7 +34,7 @@ A full-stack, production-ready Patient Portal for an ophthalmology clinic built 
 | Database | PostgreSQL                                     |
 | Dev      | Vite, ESModules                                |
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 patient-portal/
@@ -182,7 +182,7 @@ Password: Test1234
 | PUT    | `/api/profile`                     | Update user profile          |
 | PUT    | `/api/profile/password`            | Change password              |
 
-## 🗄 Database Schema
+## Database Schema
 
 **Models:** `User`, `Appointment`, `Prescription`, `PrescriptionRenewal`, `TestResult`, `MedicalRecord`, `Notification`, `Doctor`
 
