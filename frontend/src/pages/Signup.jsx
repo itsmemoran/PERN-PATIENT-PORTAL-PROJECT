@@ -132,7 +132,11 @@ export default function Signup() {
           {/* Google Sign Up */}
           <button
             type="button"
-            onClick={() => { window.location.href = '/api/auth/google' }}
+            onClick={() => {
+              window.location.href = import.meta.env.VITE_API_URL
+                ? `${import.meta.env.VITE_API_URL}/api/auth/google`
+                : '/api/auth/google'
+            }}
             className="btn-secondary w-full"
           >
             <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">

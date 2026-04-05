@@ -60,9 +60,7 @@ export default function Login() {
         <div className="w-full max-w-md">
           {/* Mobile logo */}
           <div className="lg:hidden flex items-center gap-2 mb-8">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <span className="text-white text-lg font-bold font-display">D</span>
-            </div>
+            <img className= 'w-10 h-10 flex items-center justify-center' src="/src/assets/logo-danan-500x500.png" alt="logo" />
             <div>
               <p className="font-bold font-display text-gray-900">Centre Medical Danan</p>
             </div>
@@ -131,7 +129,11 @@ export default function Login() {
           {/* Google Sign In */}
           <button
             type="button"
-            onClick={() => { window.location.href = '/api/auth/google' }}
+            onClick={() => {
+              window.location.href = import.meta.env.VITE_API_URL
+                ? `${import.meta.env.VITE_API_URL}/api/auth/google`
+                : '/api/auth/google'
+            }}
             className="btn-secondary w-full"
           >
             <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
